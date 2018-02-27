@@ -1,0 +1,9 @@
+<h1>Welcome to Amazing Records!</h1>
+
+<%  for album in @albums %>
+  <p>Artist: <%= Artist.find(album.artist_id).name %></p>
+  <p>Title: <%= album.title %></p>
+  <p>Quantity: <%= album.quantity %></p>
+  <p>Stock level: <%= album.stock_level %></p>
+    <hr/>
+<% end %>
