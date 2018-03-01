@@ -1,0 +1,23 @@
+<form method="post" action="/album/<%= @album.id %>">
+  <label for="artist_id">Artist: </label>
+
+  <select name="artist_id">
+    <% @artists.each do |artist| %>
+<option value="<%= artist.id %>"><%= artist.name %> </option>
+    <% end %>
+  </select>
+  <label for="title">Title: </label>
+  <input id="title" value="<%= @album.title() %>" type="text" name="title"
+  required="required" min="0"/>
+
+  <label for="genre">Title: </label>
+  <input id="genre" value="<%= @album.genre() %>" type="text" name="genre"
+  required="required" min="0"/>
+
+  <label for="quantity"> Quantity: </label>
+  <input  id="quantity" value="<%= @album.quantity() %>" type="number"
+  name="quantity" required="required" min="0"/>
+
+  <input type="submit" value="update details" />
+
+</form>

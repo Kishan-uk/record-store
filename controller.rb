@@ -1,10 +1,10 @@
 require('sinatra')
 require('sinatra/contrib/all')
-require_relative('models/album')
-require_relative('models/artist')
+require_relative('controllers/album_controller')
+require_relative('controllers/artist_controller')
 require('pry-byebug')
 
-get '/record-store' do
+get '/' do
   @albums = Album.all()
   @artists = Artist.all()
   erb(:index)
