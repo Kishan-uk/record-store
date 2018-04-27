@@ -79,6 +79,14 @@ class Album
       return Album.new(result)
     end
 
+    #added for PDA
+    def self.sort_by_quantity()
+      sql = "SELECT * FROM albums ORDER BY quantity"
+      values = [id]
+      result = SqlRunner.run(sql, values).first
+      return Album.new(result)
+    end
+
     def self.delete_all()
       sql = "DELETE FROM albums"
       SqlRunner.run(sql)

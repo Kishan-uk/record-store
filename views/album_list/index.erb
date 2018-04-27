@@ -1,22 +1,38 @@
-<p>
-<%  for album in @albums %>
-  <p>Artist: <%= Artist.find(album.artist_id).name %></p>
-  <p>Title: <%= album.title %></p>
-  <p>Genre: <%= album.genre %></p>
-  <p>Buy price: £<%= album.buy_price %></p>
-  <p>Sell price: £<%= album.sell_price %></p>
-  <p>Mark up: £<%= album.mark_up %></p>
-  <p>Quantity: <%= album.quantity %></p>
-  <p>Stock level: <%= album.stock_level %></p>
-  <p>
-  </p>
+<h2>Albums</h2>
 
-  <form method="get" action="/album/<%= album.id %>/update">
-    <input type="submit"  value="Update album" />
-  </form>
-  <form method="post" action="/album/<%= album.id %>/delete">
-    <input type="submit"  value="Delete album" />
-  </form>
+<table>
+  <tr>
+    <th>Artist</th>
+    <th>Title</th>
+    <th>Genre</th>
+    <th>Stock Level</th>
+    <th>Buy Price £:</th>
+    <th>Sell Price £:</th>
+    <th>Mark up: £:</th>
+    <th>Quantity:</th>
+    <th>Stock level:</th>
+    <th></th>
+    <th></th>
+  </tr>
 
-    <hr/>
-<% end %>
+  <%  for album in @albums %>
+
+  <tr>
+    <td><%= Artist.find(album.artist_id).name %></td>
+    <td><%= album.title %></a></td>
+    <td><%= album.genre %></p>
+    <td><%= album.stock_level %></td>
+    <td><%= album.buy_price %><td>
+    <td><%= album.sell_price %></td>
+    <td><%= album.mark_up %></td>
+    <td><%= album.quantity %></td>
+    <td><%= album.stock_level %></td>
+    <td><form method="get" action="../album/<%= album.id %>/update">
+      <input type="submit"  value="Update album" />
+    </form></td>
+    <td> <form method="post" action="../album/<%= album.id %>/delete">
+        <input type="submit"  value="Delete album" />
+      </form></td>
+  </tr>
+  <% end %>
+</table>
