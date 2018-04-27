@@ -23,12 +23,12 @@ album1 = Album.new({
   'artist_id' => artist1.id})
 
 album2 = Album.new({
-    'title' => 'Homework',
-    'genre' => 'French House',
-    'quantity' => '31',
-    'buy_price' => '4.99',
-    'sell_price' => '8.99',
-    'artist_id' => artist2.id})
+  'title' => 'Homework',
+  'genre' => 'French House',
+  'quantity' => '31',
+  'buy_price' => '4.99',
+  'sell_price' => '8.99',
+  'artist_id' => artist2.id})
 
 album3 = Album.new({
   'title' => 'OK Cowboy',
@@ -43,5 +43,4 @@ album2.save()
 album3.save()
 
 binding.pry
-
 nil

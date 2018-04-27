@@ -1,0 +1,22 @@
+<p>
+<%  for album in @albums %>
+  <p>Artist: <%= Artist.find(album.artist_id).name %></p>
+  <p>Title: <%= album.title %></p>
+  <p>Genre: <%= album.genre %></p>
+  <p>Buy price: £<%= album.buy_price %></p>
+  <p>Sell price: £<%= album.sell_price %></p>
+  <p>Mark up: £<%= album.mark_up %></p>
+  <p>Quantity: <%= album.quantity %></p>
+  <p>Stock level: <%= album.stock_level %></p>
+  <p>
+  </p>
+
+  <form method="get" action="/album/<%= album.id %>/update">
+    <input type="submit"  value="Update album" />
+  </form>
+  <form method="post" action="/album/<%= album.id %>/delete">
+    <input type="submit"  value="Delete album" />
+  </form>
+
+    <hr/>
+<% end %>

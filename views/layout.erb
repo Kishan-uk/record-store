@@ -3,8 +3,24 @@
 <head>
   <meta charset="utf-8">
   <title>Amazing Records</title>
+  <link rel="stylesheet" type="text/css" href="/styles/structure.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
+  <div class="header">
+    <h1>Amazing Records</h1>
+  </div>
+
+  <div class="topnav">
+  <a href="/">Home</a>
+<a href="/album_list">Album list</a>
+  <a href="/album">Add new album</a>
+  <a href="/artist">Add new artist</a>
+</div>
+
   <%= yield %>
+  <div class="footer">
+    <p>Powered by Amazing Software Systems - © 2018 All rights reserved.</p>
+  </div>
 </body>
 </html>

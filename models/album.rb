@@ -69,7 +69,7 @@ class Album
 
     def mark_up
       result = @sell_price - @buy_price
-      return sprintf("£""%.2f", result)
+      return sprintf("%.2f", result)
     end
 
     def self.find(id)
